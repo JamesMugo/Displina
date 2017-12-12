@@ -1,4 +1,3 @@
-<?php include('database.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Displina SignUp</title>
+    <title>Displina login</title>
+
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,6 +24,8 @@
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <script type="text/javascript" src="../js/script.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,40 +35,35 @@
 
 </head>
 
-<body>  
-    <input type="hidden" name="register" value="true">
+<body>
+
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign Up</h3>
+                        <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" method="post" action="signup.php">
-                            <?php include('errors.php');?>
+                        <form role="form" method="post" action="login.php">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                                    <input class="form-control" placeholder="Username" id="username" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail Address" name="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="Password" id="password" type="password" value="">
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Phone Number" name="phone" type="text" autofocus>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Age" name="age" type="text" autofocus>
+                            <button type="button" class="btn btn-lg btn-success btn-block" onclick="userLogin()" name="login">Login</button>
+                                <br>
+                                <div align="center">
+                                    <h6>Dont have an account? </h6>
+                                    <a href="signup.html" class="btn btn-outline btn-primary btn-sm">Sign Up</a>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Organization" name="org" type="text" autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                                </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <input type="submit" name="newuser" class="btn btn-lg btn-success btn-block" placeholder="Sign Up">
-                                <!--a href="index.html" class="btn btn-lg btn-success btn-block" itype="submit" name="newuser">REGISTER</a-->
                                 
                             </fieldset>
                         </form>
